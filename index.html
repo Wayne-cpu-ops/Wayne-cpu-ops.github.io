@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>QuoteLink｜方案與價格</title>
+<meta name="description" content="QuoteLink：給接案工作者的報價連結與需求單工具。客人點連結選規格、即時看到金額，需求單自動整理進需求牆。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=Noto+Sans+TC:wght@400;500;700&amp;display=swap">
+<style>
+:root{--ink:#111318;--ink2:#3D4452;--muted:#4B5160;--sub:#656B79;--line:#E3E6EB;--line2:#EEF0F3;--soft:#F5F6F8;--blue:#2F5BEA;--blue-ink:#1B3AA8;--blue-soft:#EEF2FE;--green:#0B7A5C;--dash:#9AA0AB}
+*{box-sizing:border-box}
+html,body{margin:0;background:#fff;color:var(--ink);font-family:'Geist','Noto Sans TC','PingFang TC','Microsoft JhengHei',sans-serif;-webkit-text-size-adjust:100%}
+a{color:#2447C4}a:hover{color:var(--blue-ink)}
+.wrap{max-width:1152px;margin:0 auto;padding:0 20px}
+header{border-bottom:1px solid var(--line2)}
+header .wrap{height:64px;display:flex;align-items:center;gap:10px}
+.logo{width:26px;height:26px;border-radius:7px;background:var(--blue);display:flex;align-items:center;justify-content:center}
+.brand{font-size:17px;font-weight:700;letter-spacing:.02em}
+.ver{margin-left:auto;font-size:13px;color:var(--sub)}
+main{padding:56px 0 80px}
+.hero{text-align:center;max-width:680px;margin:0 auto}
+.eyebrow{font-size:14px;font-weight:600;color:#2447C4}
+h1{margin:12px 0 0;font-size:clamp(30px,5vw,42px);line-height:1.25;font-weight:700}
+.lead{margin:14px 0 0;font-size:16.5px;line-height:1.65;color:var(--muted)}
+.plans{margin-top:44px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.plan{padding:28px;border:1px solid var(--line);border-radius:14px;display:flex;flex-direction:column}
+.plan.pro{border:2px solid var(--blue);padding:27px}
+.plan-head{display:flex;justify-content:space-between;align-items:center;font-size:16px;font-weight:700}
+.badge{font-size:12px;font-weight:600;color:var(--blue-ink);background:#EDF2FF;border-radius:5px;padding:2px 8px}
+.price{margin-top:12px;display:flex;align-items:baseline;gap:4px}
+.price b{font-size:34px;line-height:40px;font-variant-numeric:tabular-nums}
+.price span,.annual{font-size:14px;color:var(--sub)}
+.annual{margin-top:4px;font-size:13.5px}
+.plan ul{margin:20px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px}
+.plan li{display:flex;gap:8px;font-size:14px;line-height:21px;color:var(--ink2)}
+.plan li svg{flex-shrink:0;margin-top:3px}
+.cta{margin-top:auto;padding-top:24px}
+.cta a{display:flex;align-items:center;justify-content:center;height:44px;border-radius:8px;border:1px solid #D3D7DE;color:var(--ink);font-size:14.5px;font-weight:600;text-decoration:none}
+.pro .cta a{background:var(--blue);border-color:var(--blue);color:#fff}
+h2{margin:80px 0 0;font-size:26px;line-height:34px;font-weight:700}
+.h2sub{margin:8px 0 0;font-size:15px;line-height:24px;color:var(--muted)}
+.tablebox{margin-top:24px;border:1px solid var(--line);border-radius:14px;overflow-x:auto}
+table{width:100%;min-width:640px;border-collapse:collapse}
+th,td{padding:12px 16px;border-top:1px solid var(--line2);text-align:center;font-size:14px;vertical-align:middle}
+thead th{border-top:0;height:72px}
+thead th small{display:block;font-weight:400;font-size:13px;color:var(--sub)}
+th.feat,td.feat{text-align:left;width:52%}
+td.feat b{display:block;font-size:15px;font-weight:500;line-height:22px}
+td.feat span{display:block;font-size:13px;line-height:19px;color:var(--sub);margin-top:2px}
+.col-pro{background:#F7F9FF}
+thead .col-pro{background:var(--blue-soft);box-shadow:inset 0 3px 0 var(--blue)}
+tr.group td{background:var(--soft);font-size:13.5px;font-weight:700;color:var(--ink2);text-align:left;letter-spacing:.04em;border-top:1px solid var(--line)}
+tr.group td.col-pro{background:var(--blue-soft)}
+.no{color:var(--dash)}
+.addons{margin-top:24px;display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.addon{padding:24px 28px;border:1px solid var(--line);border-radius:14px}
+.addon-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:16px;font-weight:700}
+.addon-head b{font-size:22px;font-variant-numeric:tabular-nums}
+.addon-head small{font-size:13.5px;font-weight:400;color:var(--sub)}
+.addon p{margin:8px 0 0;font-size:14px;line-height:22px;color:var(--muted)}
+.addon p.note{font-size:13px;line-height:20px;color:var(--sub)}
+.box{margin-top:20px;padding:24px 28px;background:var(--soft);border-radius:14px}
+.box:first-of-type{margin-top:56px}
+.box h3{margin:0;font-size:15px;font-weight:700}
+.box ul{margin:10px 0 0;padding-left:20px;display:flex;flex-direction:column;gap:6px}
+.box li{font-size:14px;line-height:23px;color:var(--muted)}
+.owner{margin-top:20px;padding:24px 28px;border:1px solid var(--line);border-radius:14px}
+.owner h3{margin:0;font-size:15px;font-weight:700}
+.owner dl{margin:14px 0 0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.owner dt{font-size:13px;color:var(--sub)}
+.owner dd{margin:4px 0 0;font-size:14.5px;font-weight:500;word-break:break-all}
+footer{border-top:1px solid var(--line2);padding:24px 0;font-size:13px;color:var(--sub)}
+@media (max-width:860px){
+  .plans{grid-template-columns:1fr}
+  .addons{grid-template-columns:1fr}
+  .owner dl{grid-template-columns:1fr 1fr}
+  h2{margin-top:64px}
+}
+@media (max-width:480px){
+  .owner dl{grid-template-columns:1fr}
+  .ver{display:none}
+  .plan,.addon,.box,.owner{padding:22px}
+}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<span class="logo"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M6 7h12"/><path d="M6 12h12"/><path d="M6 17h7"/></svg></span>
+<span class="brand">QuoteLink</span>
+<span class="ver">方案與價格 · 2026 年 10 月版</span>
+</div></header>
+
+<main><div class="wrap">
+<section class="hero">
+<div class="eyebrow">方案與價格</div>
+<h1>先有生意，才需要付費</h1>
+<p class="lead">QuoteLink 是給接案工作者的報價連結：客人點你的連結選規格、當場看到金額，送出的需求單自動整理進需求牆。免費版就能收需求單、讓客人看進度；等你開始覺得「這天到底還能不能接」「訂金收了沒」要另外記，再升級 Pro。</p>
+</section>
+
+<div class="plans">
+<section class="plan" aria-label="Free">
+<div class="plan-head">Free</div>
+<div class="price"><b>免費</b></div>
+<div class="annual">永久免費，不用綁卡</div>
+<ul>
+<li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0B7A5C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>1 條上線中的連結</li>
+<li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0B7A5C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>每月 100 張需求單</li>
+<li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0B7A5C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>即時估價、分流、LINE／IG 傳送</li>
+<li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0B7A5C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>需求牆與客人的訂單進度頁</li>
+</ul>
+<div class="cta"><a href="#contact">免費開始</a></div>
+</section>
+<section class="plan pro" aria-label="Pro">
+<div class="plan-head">Pro <span class="badge">最多人用</span></div>
+<div class="price"><b>NT$290</b><span>/ 月</span></div>
+<div class="annual">年繳 NT$2,900，等於省兩個月</div>
+<ul>
+<li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0B7A5C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>連結數不限、需求單不限</li>
+<li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0B7A5C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>接單上限：額滿、公休自動反灰</li>
+<li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0B7A5C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>訂金、備註追蹤欄與月曆檢視</li>
+<li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0B7A5C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>每一步自選寄 Email 給客人</li>
+<li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0B7A5C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>成效分析、拿掉頁尾標記</li>
+</ul>
+<div class="cta"><a href="#contact">試用 14 天</a></div>
+</section>
+<section class="plan" aria-label="Studio">
+<div class="plan-head">Studio</div>
+<div class="price"><b>NT$790</b><span>/ 月</span></div>
+<div class="annual">年繳 NT$7,900，等於省兩個月</div>
+<ul>
+<li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0B7A5C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Pro 的全部</li>
+<li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0B7A5C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>最多 5 人一起管理</li>
+<li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0B7A5C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>自訂網域、品牌色與 Logo</li>
+</ul>
+<div class="cta"><a href="#contact">升級到 Studio</a></div>
+</section>
+</div>
+
+<h2>完整功能對照</h2>
+<p class="h2sub">三個方案的填寫頁、需求牆和進度頁都一樣好用，差別在接單規則、追蹤和團隊。</p>
+<div class="tablebox"><table>
+<thead><tr><th class="feat" scope="col" style="font-weight:400;color:var(--sub)">功能</th><th scope="col">Free<small>免費</small></th><th scope="col" class="col-pro">Pro<small>NT$290 / 月</small></th><th scope="col">Studio<small>NT$790 / 月</small></th></tr></thead>
+<tbody>
+<tr class="group"><td>連結與填寫頁</td><td></td><td class="col-pro"></td><td></td></tr>
+<tr><td class="feat"><b>上線中的連結</b><span>客人點進來下訂的連結。已停用的不算。</span></td><td>1 條</td><td class="col-pro">不限</td><td>不限</td></tr>
+<tr><td class="feat"><b>每月需求單</b><span>只用來防止濫用，一般店家碰不到。</span></td><td>100 張</td><td class="col-pro">不限</td><td>不限</td></tr>
+<tr><td class="feat"><b>即時估價、分流題</b><span>客人選規格時金額當場算好；不同品項只問相關的題目。</span></td><td>✓</td><td class="col-pro">✓</td><td>✓</td></tr>
+<tr><td class="feat"><b>LINE／IG 傳送需求單</b><span>送出後直接帶進你的聊天室，沒有官方帳號也能複製貼上。</span></td><td>✓</td><td class="col-pro">✓</td><td>✓</td></tr>
+<tr><td class="feat"><b>行業範本</b><span>蛋糕、攝影、花禮、木作，品項和價格先填好。</span></td><td>✓</td><td class="col-pro">✓</td><td>✓</td></tr>
+<tr><td class="feat"><b>AI 建立表單</b><span>你也可以用自己的 AI。</span></td><td>1 次免費機會</td><td class="col-pro">一個月 5 次機會</td><td>幾乎無限制</td></tr>
+<tr class="group"><td>需求牆</td><td></td><td class="col-pro"></td><td></td></tr>
+<tr><td class="feat"><b>排序、篩選、分組、下載 CSV</b><span>依取貨日期排好，就是這週的製作清單。</span></td><td>✓</td><td class="col-pro">✓</td><td>✓</td></tr>
+<tr><td class="feat"><b>月曆檢視</b><span>一眼看出哪幾天比較滿。</span></td><td class="no">—</td><td class="col-pro">✓</td><td>✓</td></tr>
+<tr><td class="feat"><b>追蹤欄：訂金、備註</b><span>只有你看得到，不用另外開試算表。</span></td><td class="no">—</td><td class="col-pro">✓</td><td>✓</td></tr>
+<tr class="group"><td>訂單進度</td><td></td><td class="col-pro"></td><td></td></tr>
+<tr><td class="feat"><b>客人的訂單進度頁</b><span>你按一下「下一步」，客人點連結就看得到訂單走到哪。</span></td><td>✓</td><td class="col-pro">✓</td><td>✓</td></tr>
+<tr><td class="feat"><b>改取貨日、婉拒、取消的通知信</b><span>客人一定要知道的事，一律寄出。</span></td><td>✓</td><td class="col-pro">✓</td><td>✓</td></tr>
+<tr><td class="feat"><b>每一步自選要不要自動寄出 Email</b><span>例如「製作中」「可以取貨」也順便通知客人。</span></td><td class="no">—</td><td class="col-pro">✓</td><td>✓</td></tr>
+<tr class="group"><td>接單與經營</td><td></td><td class="col-pro"></td><td></td></tr>
+<tr><td class="feat"><b>接單上限</b><span>額滿、公休、太趕的日子直接反灰。所有連結共用同一份產能。</span></td><td class="no">—</td><td class="col-pro">✓</td><td>✓</td></tr>
+<tr><td class="feat"><b>成效：客人在哪一頁離開</b><span>知道價格或哪一題把客人嚇跑。</span></td><td class="no">—</td><td class="col-pro">✓</td><td>✓</td></tr>
+<tr><td class="feat"><b>移除頁尾「用 QuoteLink 製作」</b></td><td class="no">—</td><td class="col-pro no">—</td><td>✓</td></tr>
+<tr class="group"><td>團隊與品牌</td><td></td><td class="col-pro"></td><td></td></tr>
+<tr><td class="feat"><b>多人一起管理</b><span>夥伴各自登入，同一面需求牆。</span></td><td class="no">—</td><td class="col-pro no">—</td><td>最多 5 人</td></tr>
+<tr><td class="feat"><b>自訂網域、品牌色與 Logo</b><span>連結用你自己的網址。</span></td><td class="no">—</td><td class="col-pro no">—</td><td>✓</td></tr>
+</tbody></table></div>
+
+<h2>單次加購</h2>
+<p class="h2sub">不想每個月訂閱，或想要有人幫你起頭的時候。</p>
+<div class="addons">
+<section class="addon" aria-label="檔期通行">
+<div class="addon-head">檔期通行 <span><b>NT$149</b><small> / 10 天</small></span></div>
+<p>母親節、聖誕、年節前買一次，這 10 天有 Pro 的全部功能。</p>
+<p class="note">單次付款、不會自動續約，可用信用卡、ATM 或超商。</p>
+</section>
+<section class="addon" aria-label="代建第一條連結">
+<div class="addon-head">代建第一條連結 <span><b>NT$390</b><small> / 次</small></span></div>
+<p>把你的價目表傳給我們，我們幫你建好、試填過再交給你。</p>
+<p class="note">交件後可以自己改。不限方案，Free 也可以加購。</p>
+</section>
+</div>
+
+<div class="box">
+<h3>付款與試用</h3>
+<ul>
+<li>Pro 的 14 天試用，從你收到第一張需求單那天才開始算，不用綁卡。試用結束會自動回到 Free，表單和需求單都會留著。</li>
+<li>月繳用信用卡定期扣款；年繳可以用信用卡、ATM 轉帳或超商付款，入帳後自動開通。</li>
+<li>隨時可以取消自動續約，已付的期間照常使用到期滿。</li>
+</ul>
+</div>
+<div class="box">
+<h3>退款規則</h3>
+<ul>
+<li>月繳：每期扣款後即開通當月服務，已扣款的期間不退款；取消後下一期起不再扣款。</li>
+<li>年繳：付款後 7 天內、且尚未使用 Pro 專屬功能，可申請全額退款；超過 7 天不退款，可使用到期滿。</li>
+<li>檔期通行開通後、代建服務開始製作後，不退款。</li>
+<li>本服務為線上提供的數位服務。付款前會請你勾選同意：依《通訊交易解除權合理例外情事適用準則》，不適用 7 天無條件解除權。</li>
+<li>申請退款請寄信到下方聯絡信箱，款項退回原付款方式，約 7–14 個工作天入帳。</li>
+</ul>
+</div>
+<section class="owner" id="contact" aria-label="經營者資訊">
+<h3>經營者資訊</h3>
+<dl>
+<div><dt>經營者</dt><dd>邱偉恩（個人經營）</dd></div>
+<div><dt>聯絡信箱</dt><dd><a href="mailto:coffe12380@gmail.com">coffe12380@gmail.com</a></dd></div>
+<div><dt>客服回覆時間</dt><dd>週一至週五 10:00–17:00</dd></div>
+<div><dt>服務網址</dt><dd>https://wayne-cpu-ops.github.io/</dd></div>
+</dl>
+</section>
+</div></main>
+
+<footer><div class="wrap">© 2026 QuoteLink · 邱偉恩（個人經營）</div></footer>
+</body>
+</html>
